@@ -1,0 +1,92 @@
+/* Estilo base para o body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Configuração do menu topo */
+.menu-topo {
+    background-color: #2c3e50;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+#logo {
+    width: 50px;
+    height: 50px;
+}
+
+/* Estilizando os botões */
+.botoes {
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+/* Submenu (escondido por padrão) */
+.subBtn {
+    display: block; /* Sempre visível, mas escondido com max-height */
+    background-color: #34495e;
+    position: absolute;
+    top: 100%; /* Coloca o submenu logo abaixo do botão */
+    left: 1; /* Alinha o submenu à esquerda do botão */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    max-height: 0; /* Submenu começa fechado */
+    overflow: hidden; /* Impede que o conteúdo apareça antes de abrir */
+    opacity: 0; /* Começa invisível */
+    transition: max-height 0.5s ease, opacity 0.3s ease;
+    right: 10px;
+    flex-direction: column;
+}
+
+/* Submenu visível (aberto) */
+.subBtn.active {
+    max-height: 200px; /* Tamanho máximo do submenu quando aberto */
+    opacity: 1; /* Torna o submenu visível */
+}
+
+/* Botões dentro do submenu */
+.subBtn .teste {
+    background-color: #16a085;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.subBtn .teste:hover {
+    background-color: #1abc9c;
+}
+
+.close-submenu {
+    display: block;
+    aspect-ratio: 1 / 1;
+    background-color: whitesmoke;
+}
+
+.close-submenu:hover {
+    background-color: #ff0000;
+}
